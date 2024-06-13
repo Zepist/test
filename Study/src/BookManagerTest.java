@@ -1,8 +1,15 @@
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * BookManagerTest
+ * Author : 이정광
+ * 최종 수정일자 : 2024.06.13
+ */
+
 public class BookManagerTest {
 	
+	// Book 추가 기능
 	public void testAddBook(List<Book> bookList, int id, String title, String author, int year) {
 		if(bookList.contains(new Book(id,title,author,year))) {
 			System.out.println("해당 ID(" + id + ") 는 이미 존재합니다!");
@@ -13,6 +20,7 @@ public class BookManagerTest {
 		}
 	}
 	
+	// Book 검색 기능
 	public void testSearchBook(List<Book> bookList, int id) {
 		if(bookList.contains(new Book(id,"","",0))) {
 			int idx = bookList.indexOf(new Book(id,"","",0));
@@ -24,6 +32,7 @@ public class BookManagerTest {
 		}
 	}
 	
+	// Book 삭제 기능
 	public void testRemoveBook(List<Book> bookList, int id) {
 		if(bookList.contains(new Book(id,"","",0))) {
 			int idx = bookList.indexOf(new Book(id,"","",0));
@@ -36,6 +45,7 @@ public class BookManagerTest {
 		}
 	}
 	
+	// Book 이진탐색 기능
 	public void testBinarySearch(List<Book> bookList, int id) {
 		Collections.sort(bookList); // 이진탐색 전 정렬
 		
